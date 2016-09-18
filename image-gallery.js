@@ -10,6 +10,7 @@ function addLoadEvent(func) {
         }
     }
 }
+//理解-----------------------------------------
 //将被插入的新元素,新元素将被插入到他的后面去的目标元素
 function insertAfter(newElement, targetElement) {
     var parent = targetElement.parentNode;
