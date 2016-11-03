@@ -2,9 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        ul.nav,
+        ul.nav ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            float: left;
+            background: black;
+        }
+        ul.nav li ul{
+            width:8em;
+            position: absolute;
+            left: -999em;
+        }
+        ul.nav li:hover ul{
+            left: auto;
+        }
+        ul.nav li{
+            float: left;
+            width: 8em;
+            background-color: black;
+        }
+        ul.nav li a{
+            display: block;
+            color: white;
+            line-height: 2.1em;
+            padding: 0 2em;
+            text-decoration: none;
+        }
+        ul.nav li a:hover,
+        ul a:hover{
+            color: blue;
+        }
+    </style>
 </head>
 <body>
-$END$
+<ul class="nav">
+    <li><a href="#">books</a>
+        <ul>
+            <li><a href="#">Math</a></li>
+            <li><a href="#">English</a></li>
+            <li><a href="#">Chinese</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Animals</a></li>
+    <li><a href="#">Humans</a>
+       <ul>
+           <li><a href="#">Male</a></li>
+           <li><a href="#">Female</a></li>
+       </ul>
+    </li>
+</ul>
 </body>
 </html>

@@ -18,14 +18,14 @@ function insertAfter(newElement, targetElement) {
         parent.appendChild(newElement);
     }
     else {
-        parent.insertBefore(newElement,targetElement.nextSibling);
+        parent.insertBefore(newElement, targetElement.nextSibling);
     }
 }
 function preparePlaceholder() {
-    if(!document.createElement) return false;
-    if(!document.createTextNode) return false;
-    if(!document.getElementById) return false;
-    if(!document.getElementsByTagName) return false;
+    if (!document.createElement) return false;
+    if (!document.createTextNode) return false;
+    if (!document.getElementById) return false;
+    if (!document.getElementsByTagName) return false;
     var images = document.createElement('img');
     images.setAttribute('id', 'placeholder');
     images.setAttribute('src', 'pictures/state.jpg');
@@ -35,8 +35,8 @@ function preparePlaceholder() {
     var txt = document.createTextNode('choose an image');
     para.appendChild(txt);
     var gallery = document.getElementById('image-gallery');
-    insertAfter(para,gallery);
-    insertAfter(images,gallery);
+    insertAfter(para, gallery);
+    insertAfter(images, gallery);
 }
 function prepareGallery() {
     if (!document.getElementsByTagName || !document.getElementById) {

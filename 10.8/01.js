@@ -1,3 +1,4 @@
-/**
- * Created by zhaotong on 16-10-8.
- */
+function f1() {
+
+}
+f1();

@@ -1,0 +1,12 @@
+.a{
+    width: 100px;
+    height:100px;
+    background-color: deeppink;
+    float: left;
+}
+.b{
+    width: 150px;
+    height:150px;
+    background-color: goldenrod;
+    float: right;
+}
