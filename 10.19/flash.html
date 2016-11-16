@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function positionMessage() {
+        if (!document.getElementById) return false;
+        if (!document.getElementById('message')) return false;
+        var elem = document.getElementById('message');
+        elem.style.position = 'absolute';
+        elem.style.left = '50px';
+        elem.style.top = '100px';
+        moveElement('message',125,25,20);
+        if(!document.getElementById('message2')) return false;
+        var elem2 = document.getElementById('message2');
+        elem2.style.position = 'absolute';
+        elem2.style.left = '50px';
+        elem2.style.top = '50px';
+        moveElement('message2',100,100,20);
+    }
+
+    addLoadEvent(positionMessage);
+    function addLoadEvent(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload !== 'function') {
+            window.onload = func;
+        } else {
+            window.onload = function () {
+                oldonload();
+                func();
+            }
+        }
+    }
+
+    function moveElement(elementID,x,y,interval) {
+        if(!document.getElementById) return false;
+        if(!document.getElementById(elementID)) return false;
+        var elem = document.getElementById(elementID);
+        var xpos = parseInt(elem.style.left);
+        var ypos = parseInt(elem.style.top);
+        if(xpos == 200 && ypos == 100){
+            return true;
+        }
+        if(xpos<x){
+            xpos++;
+        }
+        if(xpos>x){
+            xpos--;
+        }
+        if(ypos<y){
+            ypos++;
+        }
+        if(ypos>y){
+            ypos--;
+        }
+        elem.style.left = xpos + 'px';
+        elem.style.top = ypos + 'px';
+        var repeat = "moveElement('"+elementID+"',"+x+","+y+","+interval+")";
+        movement = setTimeout(repeat,interval);
+    }
+
+</script>
+<p id="message">whee!</p>
+<p id="message2">Whoa!</p>
+</body>
+</html>
